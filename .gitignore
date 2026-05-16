@@ -27,9 +27,14 @@ Thumbs.db
 *.swp
 *.swo
 
-# Backend specific
-backend/node_modules/
-backend/uploads/
+# Backend specific (Django)
+backend/venv/
+backend/db.sqlite3
+backend/media/
+backend/__pycache__/
+*.pyc
+backend/inventory/migrations/00*.py
+!backend/inventory/migrations/__init__.py
 
 # Frontend specific
 frontend/node_modules/
