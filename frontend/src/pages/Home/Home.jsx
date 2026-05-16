@@ -1,41 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, BarChart3, Box, Zap, CheckCircle2, ChevronRight } from 'lucide-react'
-import gsap from 'gsap'
 import { motion, AnimatePresence } from 'framer-motion'
 import ThreeBackground from '../../components/ThreeBackground'
 
 export default function Home() {
   const heroRef = useRef(null);
   const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero Animation
-      gsap.from(".hero-content > *", {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power4.out"
-      });
-
-      // Feature Cards Animation
-      gsap.from(".feature-card", {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".feature-grid",
-          start: "top 80%"
-        }
-      });
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <div ref={heroRef} className="min-h-screen bg-white dark:bg-black transition-colors duration-500 overflow-x-hidden">
@@ -79,7 +50,12 @@ export default function Home() {
               InvenTrack transforms your warehouse into a data-driven engine with real-time profit tracking and predictive logistics.
             </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+            >
               <Link 
                 to="/admin" 
                 className="w-full sm:w-auto px-12 py-5 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 shadow-2xl shadow-indigo-500/30 transition-all hover:-translate-y-2 flex items-center justify-center gap-3 text-lg"
@@ -89,7 +65,7 @@ export default function Home() {
               <button className="w-full sm:w-auto px-12 py-5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all shadow-lg">
                 View Enterprise Spec
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

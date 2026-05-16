@@ -1,0 +1,28 @@
+{
+  "name": "inventrack",
+  "version": "1.0.0",
+  "description": "InvenTrack is a high-end, production-ready Inventory Management System built on the **MERN** stack (MongoDB, Express, React, Node.js). Designed for administrative excellence, it combines professional design with advanced data analytics and deep business intelligence.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyamranatc/InvenTrack_MERN_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/satyamranatc/InvenTrack_MERN_Project/issues"
+  },
+  "homepage": "https://github.com/satyamranatc/InvenTrack_MERN_Project#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "concurrently": "^9.2.1",
+    "playwright": "^1.60.0"
+  }
+}

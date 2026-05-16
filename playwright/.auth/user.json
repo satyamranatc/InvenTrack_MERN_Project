@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:5175",
+      "localStorage": [
+        {
+          "name": "theme",
+          "value": "light"
+        },
+        {
+          "name": "token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDUwNGEyNWIwYzU0MDZkMDZmMmJiNCIsImlhdCI6MTc3ODk0OTEwMCwiZXhwIjoxNzg2NzI1MTAwfQ.ePPi1h8dA9AAEVNj3Ij9ZiAEpL97X7vmC_Rg1q8hO1E"
+        },
+        {
+          "name": "user",
+          "value": "{\"_id\":\"6a0504a25b0c5406d06f2bb4\",\"name\":\"System Admin\",\"email\":\"admin@inventrack.com\",\"password\":\"$2b$12$l6I6DIjRZbdDixWAKFSGKe7SUDlF1kKsqXPh0xgzE2Yi1K3h.8lAa\",\"role\":\"Admin\",\"createdAt\":\"2026-05-13T23:09:22.429Z\",\"updatedAt\":\"2026-05-13T23:09:22.429Z\",\"__v\":0}"
+        }
+      ]
+    }
+  ]
+}
