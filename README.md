@@ -1,44 +1,41 @@
 # 📦 InvenTrack: Enterprise Inventory Intelligence
 
-InvenTrack is a high-end, production-ready Inventory Management System built on the **MERN** stack (MongoDB, Express, React, Node.js). Designed for administrative excellence, it combines professional design with advanced data analytics and deep business intelligence.
+InvenTrack is a high-end, production-ready Inventory Management System built on the **Django + React** stack. Designed for administrative excellence, it combines professional design with advanced data analytics and a robust, automated backend intelligence layer.
 
 ---
 
 ## ✨ Enterprise Features
 
-### 🧠 Intelligence Dashboard
-*   **Predictive Revenue Forecasting**: Integrated Linear Regression engine to project revenue trends for the next 7 days.
-*   **Anomaly Detection**: Automated Z-Score statistical analysis to identify unusual spikes or drops in performance.
-*   **Reorder Intelligence**: Automated replenishment suggestions based on inventory velocity and safety stock thresholds.
-*   **Cognitive Insights**: AI-driven "Smart Insights" providing actionable advice on stock health and return rates.
-
-### 📜 Advanced Inventory Control (Beyond CRUD)
+### 🧠 Intelligence & Stock Tracking
 *   **Movement Ledger (Audit Logs)**: Every stock change is automatically recorded in a tamper-evident audit trail, tracking Inbound, Outbound, and Manual Adjustments.
+*   **Order Intelligence**: Creating an order automatically synchronizes with inventory, deducting stock and generating audit logs in real-time.
 *   **Batch & Expiry Monitoring**: Professional tracking of batch numbers and expiry dates with automatic visual warnings for expired stock.
 *   **Precision Thresholds**: Individual "Low Stock" thresholds per SKU with automated priority-based alerts.
 *   **Location Tracking**: Physical warehouse/shelf location management for every product.
 
 ### 🌓 Premium UX & Design
 *   **OLED Dark Mode**: A "True Black" (#000000) experience designed for professional workspaces and reduced eye strain.
-*   **Enterprise Typography**: Systematic high-readability fonts optimized for data-dense environments.
+*   **Enterprise Typography**: Optimized for data-dense environments using Inter and Outfit fonts.
 *   **Fluid Transitions**: Global theme switching with smooth CSS transitions and micro-animations.
+*   **Responsive Architecture**: Fully responsive UI built with Tailwind CSS for mobile and desktop management.
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Recharts, Lucide Icons
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (Mongoose)
-- **Tooling**: Vite, Nodemon, Dotenv
+- **Frontend**: React.js (Vite), Tailwind CSS, Recharts, Lucide Icons
+- **Backend**: Python 3.9+, Django 4.2+, Django REST Framework (DRF)
+- **Authentication**: JWT (SimpleJWT)
+- **Database**: SQLite (Default) / PostgreSQL (Ready)
+- **Storage**: Local Media serving for product images
 
 ---
 
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
-- Node.js (v16+)
-- MongoDB (Local or Atlas)
+- Node.js (v18+)
+- Python (3.9+)
 
 ### Installation
 
@@ -48,26 +45,27 @@ InvenTrack is a high-end, production-ready Inventory Management System built on 
    cd InvenTrack
    ```
 
-2. **Backend Setup**
+2. **Backend Setup (Django)**
    ```bash
    cd backend
-   npm install
-   # Create a .env file with MONGODB_URI and PORT
-   npm start
+   # It is recommended to use a virtual environment
+   python3 -m venv venv
+   source venv/bin/activate # Mac/Linux
+   # venv\Scripts\activate # Windows
+   
+   pip install -r requirements.txt # Coming soon, or install manually:
+   # pip install django djangorestframework django-cors-headers djangorestframework-simplejwt Pillow
+   
+   python manage.py migrate
+   python manage.py runserver
    ```
 
-3. **Frontend Setup**
+3. **Frontend Setup (React)**
    ```bash
    cd frontend
    npm install
-   # Create a .env file with VITE_API_URL
+   # Ensure .env has VITE_API_URL=http://localhost:8000
    npm run dev
-   ```
-
-4. **Seed Data (Recommended)**
-   ```bash
-   cd backend
-   node seed.js # Populates system with realistic enterprise-scale data
    ```
 
 ---
@@ -76,7 +74,7 @@ InvenTrack is a high-end, production-ready Inventory Management System built on 
 
 InvenTrack follows the **"Aesthetics of Efficiency"**:
 - **Professional Density**: High-information layouts that minimize scrolling while maintaining clarity.
-- **Visual Accountability**: Using color (Indigo for primary, Rose for alerts, Emerald for success) to guide administrative decisions instantly.
+- **Visual Accountability**: Using curated color palettes (Indigo for primary, Rose for alerts, Emerald for success) to guide administrative decisions instantly.
 - **OLED First**: Optimized for high-end displays with absolute black levels and vibrant data visualization.
 
 ---
